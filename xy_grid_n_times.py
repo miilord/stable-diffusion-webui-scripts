@@ -288,7 +288,7 @@ class Script(scripts.Script):
 
         nt_values = []
         if len(n_times_values) > 0:
-            nt_values = [x.strip() for x in chain.from_iterable(csv.reader(StringIO(n_times_values)))]
+            nt_values = [int(x.strip()) for x in chain.from_iterable(csv.reader(StringIO(n_times_values)))]
         nts = [int(random.randrange(4294967294)) if val == -1 else val for val in nt_values]
 
         if len(nts) == 0:
